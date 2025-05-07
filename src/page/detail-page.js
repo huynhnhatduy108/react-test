@@ -6,7 +6,7 @@ function PostDetail() {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/${id}`)
       .then(res => res.json())
       .then(data => setPost(data));
   }, [id]);
